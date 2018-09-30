@@ -6,6 +6,7 @@
 	athlete age = ${f_name}
 	athlete first name = ${l_name}
 	
+	<!-- invokes /addathlete - currently in HomeController -->
 	<form action="addathlete">
 		First Name <input type="text" name="fName"/>
 		<br/>
