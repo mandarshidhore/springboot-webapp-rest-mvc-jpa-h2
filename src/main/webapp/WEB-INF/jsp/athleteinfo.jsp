@@ -15,9 +15,16 @@
 		<input type="submit"/>
 	</form>
 	
-	<!-- invokes /addathlete - currently in HomeController -->
-	<form action="getathlete">
+	<!-- invokes /getathletebyage - currently in HomeController -->
+	<form action="getathletebyage">
 		Age <input type="text" name="age"/>
+		<br/>
+		<input type="submit"/>
+	</form>
+	
+	<!-- invokes /getathletebyfirstname - currently in HomeController -->
+	<form action="getathletebyfirstname">
+		FirstName <input type="text" name="firstN"/>
 		<br/>
 		<input type="submit"/>
 	</form>

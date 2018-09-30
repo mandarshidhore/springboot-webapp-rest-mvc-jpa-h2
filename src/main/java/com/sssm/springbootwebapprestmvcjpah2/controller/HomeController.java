@@ -1,7 +1,5 @@
 package com.sssm.springbootwebapprestmvcjpah2.controller;
 
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,12 +28,23 @@ public class HomeController {
 		repo.save(athlete);
 		return "athleteinfo";
 	}
-	
-	@RequestMapping("/getathlete")
-	public ModelAndView getathlete(@RequestParam("age") int id) {
-		System.out.println(">> getathlete");
-		// fetch Athlete from db
+
+	@RequestMapping("/getathletebyage")
+	public ModelAndView getathletebyage(@RequestParam("age") int id) {
+		System.out.println(">> getathletebyage");
+		// fetch Athlete from db - by age
 		Athlete athlete = repo.findById(id).orElse(null);
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("showathlete");
+		mav.addObject("ath", athlete);
+		return mav;
+	}
+
+	@RequestMapping("/getathletebyfirstname")
+	public ModelAndView getathletebyfirstname(@RequestParam("firstN") String fn) {
+		System.out.println(">> getathletebyfirstname");
+		// fetch Athlete from db - by first name - uses custom method defined in AthleteRepo
+		Athlete athlete = repo.findByFName(fn);
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("showathlete");
 		mav.addObject("ath", athlete);
