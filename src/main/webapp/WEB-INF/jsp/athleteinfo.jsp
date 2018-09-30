@@ -14,5 +14,12 @@
 		<br/>
 		<input type="submit"/>
 	</form>
+	
+	<!-- invokes /addathlete - currently in HomeController -->
+	<form action="getathlete">
+		Age <input type="text" name="age"/>
+		<br/>
+		<input type="submit"/>
+	</form>
 </body>
 </html>
