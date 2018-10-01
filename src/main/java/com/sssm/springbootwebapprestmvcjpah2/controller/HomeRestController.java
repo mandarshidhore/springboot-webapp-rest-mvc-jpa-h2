@@ -5,6 +5,8 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -38,6 +40,20 @@ public class HomeRestController {
 	public Optional<Athlete> getathlete(@PathVariable("age") int age) {
 		System.out.println(">> getathlete");
 		return repo.findById(age);
+	}
+	
+	// if you send form-data from client, you don't have to specify @RequestBody
+	@PostMapping(path = "/addathleterestcallformdata", produces = "application/json")
+	public Athlete addathleterestcallformdata(Athlete athlete) {
+		System.out.println(">> addathleterestcallformdata");
+		return repo.save(athlete);
+	}
+	
+	// if you send raw from client, you have to specify @RequestBody
+	@PostMapping(path = "/addathleterestcallrawdata", produces = "application/xml")
+	public Athlete addathleterestcallrawdata(@RequestBody Athlete athlete) {
+		System.out.println(">> addathleterestcallrawdata");
+		return repo.save(athlete);
 	}
 
 }
