@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "Get Athlete by age",
+			"name": "Get an Athlete by age",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -91,7 +91,7 @@
 			"response": []
 		},
 		{
-			"name": "Add Athlete using raw data",
+			"name": "Add an Athlete using raw data",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -113,6 +113,55 @@
 					"port": "8080",
 					"path": [
 						"addathleterestcallrawdata"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete an Athlete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/deleteathlete/35",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"deleteathlete",
+						"35"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update an Athlete",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"age\":37,\n\t\"fName\":\"Mandar Shidhore\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/updateathlete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"updateathlete"
 					]
 				}
 			},

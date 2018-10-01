@@ -4,8 +4,10 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -54,6 +56,21 @@ public class HomeRestController {
 	public Athlete addathleterestcallrawdata(@RequestBody Athlete athlete) {
 		System.out.println(">> addathleterestcallrawdata");
 		return repo.save(athlete);
+	}
+
+	// delete an athlete by age
+	@DeleteMapping(path = "/deleteathlete/{age}")
+	public void deleteathlete(@PathVariable("age") int age) {
+		System.out.println(">> deleteathlete");
+		repo.deleteById(age);
+	}
+	
+	// update an athlete by age - note that this is actually a saveOrUpdate type of call
+	// if passed Athlete object does not exist in db, it will be created
+	@PutMapping(path = "/updateathlete")
+	public void updateathlete(@RequestBody Athlete athlete) {
+		System.out.println(">> updateathlete");
+		repo.save(athlete);
 	}
 
 }
