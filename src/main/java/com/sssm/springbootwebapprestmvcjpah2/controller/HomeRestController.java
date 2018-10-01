@@ -26,7 +26,7 @@ public class HomeRestController {
 	}
 
 	// produces = "application/xml" inside @RequestMapping restricts content type to xml
-	// if Accept:application/json is sent in header, following error is produced -
+	// if Accept:application/json is sent in header, error similar to below is produced -
 	//	{
 	//	    "timestamp": "2018-10-01T03:02:59.175+0000",
 	//	    "status": 406,
