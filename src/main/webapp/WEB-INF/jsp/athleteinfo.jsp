@@ -8,6 +8,8 @@
 	
 	<!-- invokes /addathlete - currently in HomeController -->
 	<form action="addathlete">
+		Insert Athlete Info
+		<br/>
 		First Name <input type="text" name="fName"/>
 		<br/>
 		Age <input type="text" name="age"/>
@@ -17,6 +19,8 @@
 	
 	<!-- invokes /getathletebyage - currently in HomeController -->
 	<form action="getathletebyage">
+		Get Athlete by age
+		<br/>
 		Age <input type="text" name="age"/>
 		<br/>
 		<input type="submit"/>
@@ -24,6 +28,8 @@
 	
 	<!-- invokes /getathletebyfirstname - currently in HomeController -->
 	<form action="getathletebyfirstname">
+		Get Athlete by first name
+		<br/>
 		FirstName <input type="text" name="firstN"/>
 		<br/>
 		<input type="submit"/>

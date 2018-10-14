@@ -30,10 +30,10 @@ public class HomeController {
 	}
 
 	@RequestMapping("/getathletebyage")
-	public ModelAndView getathletebyage(@RequestParam("age") int id) {
+	public ModelAndView getathletebyage(@RequestParam("age") int age) {
 		System.out.println(">> getathletebyage");
 		// fetch Athlete from db - by age
-		Athlete athlete = repo.findById(id).orElse(null);
+		Athlete athlete = repo.findById(age).orElse(null);
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("showathlete");
 		mav.addObject("ath", athlete);
