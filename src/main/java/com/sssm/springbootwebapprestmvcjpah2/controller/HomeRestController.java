@@ -65,11 +65,12 @@ public class HomeRestController {
 		repo.deleteById(age);
 	}
 	
-	// update an athlete by age - note that this is actually a saveOrUpdate type of call
-	// if passed Athlete object does not exist in db, it will be created
+	// update an athlete by age
 	@PutMapping(path = "/updateathlete")
 	public void updateathlete(@RequestBody Athlete athlete) {
 		System.out.println(">> updateathlete");
+		// note that this is actually a saveOrUpdate type of call - if passed Athlete
+		// object does not exist in db, it will be created
 		repo.save(athlete);
 	}
 
